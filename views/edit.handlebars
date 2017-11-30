@@ -1,0 +1,32 @@
+<h2>Edit Page</h2>
+
+<form method="post" action="/update" class="form-inline">
+    <input type="hidden" name="id" value={{result.id}}>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="workoutName" placeholder="Enter name" name="name" value={{result.name}}>
+    </div>
+    <div class="form-group">
+        <label for="reps">Reps:</label>
+        <input type="number" class="form-control" id="workoutReps" placeholder="Enter reps" name="reps" value={{result.reps}}>
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="number" class="form-control" id="workoutWeight" placeholder="Enter weight" name="weight" value={{result.weight}}>
+    </div>
+    <div class="form-group">
+        <label for="weight">Date:</label>
+        <input type="date" class="form-control" id="workoutDate" placeholder="Enter date" name="date" value={{result.date}}>
+    </div>
+    <div class="form-group">
+        <label for="unit">Unit: lbs or kg</label>
+        <select class="form-control" id="workoutUnit" name="unit" value={{result.unit}}>
+            <option value="lbs">lbs</option>
+            <option value="kg">kg</option>
+        </select>
+    </div>
+    <input type="submit" class="btn btn-info" name="Update Workout" value="Update">
+</form>
+
+<a href="/" class="btn btn-primary" role="button">Go back</a>
+

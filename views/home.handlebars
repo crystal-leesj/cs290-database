@@ -1,0 +1,41 @@
+<h1>WorkOut Table:</h1>
+<p>{{results}}</p>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Reps</th>
+        <th>Weight</th>
+        <th>Date</th>
+        <th>lbs or kg</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each results}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{reps}}</td>
+            <td>{{weight}}</td>
+            <td>{{date}}</td>
+            <td>{{unit}}</td>
+            <td>
+                <a href="/edit/{{id}}" class="btn btn-warning" role="button">Edit</a>
+            </td>
+            <td>
+                <form method="post" action="/delete">
+                    <input type="hidden" name="id" value="{{id}}">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+
+<a href="/new" class="btn btn-primary" role="button">Add WorkOut</a>
+{{!-- <a href="/reset-table" class="btn btn-danger" role="button">Table Reset</a> --}}
